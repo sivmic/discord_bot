@@ -11,8 +11,13 @@ async def on_read():
 
 
 @bot.command()
-async def hello(*args):
-    return await bot.say("Hello, world!")
+async def hello():
+    return await bot.say("Hello, world! ")
+
+
+@bot.command()
+async def echo(*, message: str):
+    await bot.say(message)
 
 
 bot.run("MzA2NDg3MDQ3MjE5MzE0NzAx.C-EeEQ.M7viDKD79MZYVC2MWTnqwMIChdI")
