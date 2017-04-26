@@ -15,7 +15,7 @@ async def on_read():
 @client.event
 async def on_message(message):
     rtr = router.Router()
-    await rtr.route_request(message, message.channel, client)
+    await rtr.route_request(message, client)
 
 
 client.run("MzA2NDg3MDQ3MjE5MzE0NzAx.C-EeEQ.M7viDKD79MZYVC2MWTnqwMIChdI")

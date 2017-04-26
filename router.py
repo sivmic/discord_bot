@@ -4,7 +4,7 @@ import os
 
 
 class Router:
-    async def route_request(self, message, channel, client):
+    async def route_request(self, message, client):
         parameters = message.content
         parsed = parameters.split(" ")
         selected_controller = None
@@ -25,7 +25,7 @@ class Router:
         controller_class = getattr(controller_module, selected_controller.capitalize())
 
         controller_instance = controller_class()
-        await controller_instance.process(parsed, channel, client)
+        await controller_instance.process(parsed, message, client)
 
     def controller_exists(self, controller_file_name):
         return os.path.exists(os.path.join(os.path.join(os.path.dirname(__file__), "controllers"),
