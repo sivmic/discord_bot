@@ -7,6 +7,7 @@ import router
 
 client = discord.Client()
 
+
 @client.event
 async def on_read():
     print("Client logged in")
