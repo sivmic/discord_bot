@@ -7,6 +7,6 @@ class Members(controller.Controller):
         server = client.get_server(message.server.id)
 
         for member in server.members:
-            data += "`"+ str(member) + "`\n"
+            data += "`" + str(member) + "`\n"
 
         await client.send_message(message.channel, data)
