@@ -47,4 +47,5 @@ class Benedict(controller.Controller):
             name = first_name_list[random.randint(0, len(first_name_list) - 1)] + " " + last_name_list[
                 random.randint(0, len(last_name_list) - 1)]
 
+        await client.delete_message(message)
         await client.send_message(message.channel, name)

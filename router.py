@@ -6,6 +6,10 @@ import os
 class Router:
     async def route_request(self, message, client):
         parameters = message.content
+
+        if parameters[0] != '!':
+            raise Exception
+
         parsed = parameters.split(" ")
         selected_controller = None
 

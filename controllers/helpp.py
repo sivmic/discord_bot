@@ -11,4 +11,5 @@ class Helpp(controller.Controller):
         for i in range(len(data)):
             string += "`!" + data[i].replace('.py', ' ') + "`\n"
 
+        await client.delete_message(message)
         await client.send_message(message.channel, string)

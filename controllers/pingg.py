@@ -9,4 +9,5 @@ class Pingg(controller.Controller):
 
         data = str(time) + "s"
 
+        await client.delete_message(message)
         await client.send_message(message.channel, data)

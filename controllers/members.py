@@ -9,4 +9,5 @@ class Members(controller.Controller):
         for member in server.members:
             data += "`" + str(member) + "`\n"
 
+        await client.delete_message(message)
         await client.send_message(message.channel, data)
