@@ -10,8 +10,9 @@ class Echo(controller.Controller):
 
         data = ' '.join(params)
 
-        if params[0][0] == "!":
-            data = "Just.. Dude stop"
-
         await client.delete_message(message)
-        await client.send_message(message.channel, data, tts=tts)
+        if params[0][0] == "!":
+            image_path = '/home/ubuntu/handles_bot/images/dudestop.png'
+            await client.send_file(message.channel, image_path)
+        else:
+            await client.send_message(message.channel, data, tts=tts)
