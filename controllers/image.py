@@ -15,5 +15,9 @@ class Image(controller.Controller):
                 await client.send_message(message.channel, string)
 
             image_path = '/home/ubuntu/handles_bot/images/' + params[0] + '.png'
+
+        data = "Sent by: **" + str(message.author.nick) + "**"
+
         await client.delete_message(message)
+        await client.send_message(message.channel, data)
         await client.send_file(message.channel, image_path)

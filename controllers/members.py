@@ -7,7 +7,7 @@ class Members(controller.Controller):
         server = client.get_server(message.server.id)
 
         for member in server.members:
-            data += "`" + str(member) + "`\n"
+            data += "`" + str(member.nick) + "`\n"
 
         await client.delete_message(message)
         await client.send_message(message.channel, data)
