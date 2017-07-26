@@ -21,7 +21,7 @@ class Spotify(controller.Controller):
         picture = requests.get(picture_url)
 
         data = "**" + song_name + "** by **" + band_name + "**"
-        data += "\n" + uri + ""
+        data += "\n" + uri.strip() + ""
         sent_by = "Sent by: **" + str(message.author.nick) + "**"
 
         await client.delete_message(message)
