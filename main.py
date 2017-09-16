@@ -2,7 +2,6 @@
 # !/usr/bin/python3
 
 import discord
-import asyncio
 import router
 
 client = discord.Client()
