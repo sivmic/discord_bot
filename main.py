@@ -4,6 +4,8 @@
 import discord
 import router
 
+from config import BOT_ID
+
 client = discord.Client()
 
 
@@ -18,4 +20,4 @@ async def on_message(message):
     await rtr.route_request(message, client)
 
 
-client.run("MzA2NDg3MDQ3MjE5MzE0NzAx.C-EeEQ.M7viDKD79MZYVC2MWTnqwMIChdI")
+client.run(BOT_ID)

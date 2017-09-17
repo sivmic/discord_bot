@@ -1,0 +1,4 @@
+pexpect
+discord
+spotipy
+requests

@@ -4,11 +4,13 @@ import spotipy.oauth2 as oauth
 import requests
 import io
 
+from config import SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
+
 
 class Spotify(controller.Controller):
     async def process(self, params, message, client):
-        spotify_client = oauth.SpotifyClientCredentials(client_id="561ac60138d44c1fa07ad222fc7ae523",
-                                                        client_secret="aa3e17db5b7f42da8097c0f956821bc3")
+        spotify_client = oauth.SpotifyClientCredentials(client_id=SPOTIFY_CLIENT_ID,
+                                                        client_secret=SPOTIFY_CLIENT_SECRET)
 
         uri = ' '.join(params)
 

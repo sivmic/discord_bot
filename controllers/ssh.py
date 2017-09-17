@@ -1,9 +1,7 @@
 import controllers.controller as controller
 from pexpect import pxssh
 
-HOSTNAME = "89.203.249.44"
-USERNAME = "root"
-PASSWORD = "58FNMo15"
+from config import SSH_SERVER_IP, SSH_SERVER_USERNAME, SSH_SERVER_PASSWORD
 
 commands = {
     "instances": "ps -aux | grep python | wc -l",
@@ -20,7 +18,7 @@ class Ssh(controller.Controller):
         ssh_output = ""
 
         ssh = pxssh.pxssh()
-        if ssh.login(HOSTNAME, USERNAME, PASSWORD, login_timeout=10):
+        if ssh.login(SSH_SERVER_IP, SSH_SERVER_USERNAME, SSH_SERVER_PASSWORD, login_timeout=10):
             ssh.sendline(command)
             if ssh.prompt(1):
                 ssh_output = ssh.before
