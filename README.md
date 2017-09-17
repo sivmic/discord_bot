@@ -13,7 +13,7 @@ SSH_SERVER_PASSWORD = "ssh server password"
 SPOTIFY_CLIENT_ID = "spotify client id"
 SPOTIFY_CLIENT_SECRET = "spotify client secret"
 
-# bot id, without this, but will not run
+# bot id, without this, bot will not run
 BOT_ID = "bot id"
 ```
 
